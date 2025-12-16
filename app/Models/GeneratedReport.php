@@ -1,0 +1,26 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class GeneratedReport extends Model
+{
+    protected $fillable = [
+        'user_id',
+        'report_type',
+        'date_range',
+        'format',
+        'filters',
+        'filename',
+    ];
+
+    protected $casts = [
+        'filters' => 'array',
+    ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+}
